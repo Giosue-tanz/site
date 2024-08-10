@@ -1,0 +1,48 @@
+
+.WiC {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+}
+
+.WiC:before {
+    content: '';
+    position: absolute;
+    background: url('../../assets/data-bg.png')no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.WiC .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+}
+
+.WiC .content p {
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 940px) {
+    .WiC .content {
+        align-items:center;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(255, 255, 255, .7);
+        /* Aggiunta di questo codice */
+        text-align:center; 
+        margin-top:-10px; 
+        margin-bottom:-10px; 
+        padding-top:10px; 
+        padding-bottom:10px; 
+        border-radius:5px; 
+        box-shadow:0px 0px 5px rgba(0,0,0,.3);
+    }
+}

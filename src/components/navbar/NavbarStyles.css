@@ -1,0 +1,241 @@
+.navbar, .navbar .logo h1, .navbar .icon, .navbar li {
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 10;
+}
+
+.navbar-white {
+    background-color: white;
+    height: 60px;
+}
+
+.navbar.navbar-white .logo, .navbar.navbar-white .icon, .navbar.navbar-white .nav-item-white, .navbar.navbar-white .nav-item-white:hover {
+    color: #333;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar .logo h1 {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.navbar .nav-menu {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 1rem 0;
+}
+
+.hamburger {
+    display: none;
+    padding: 1rem;
+}
+
+.navbar li {
+    padding: 1rem;
+    font-weight: 400;
+    color: #ccc;
+    position: relative;
+}
+
+
+/* Aggiunge un'animazione alla linea sotto gli elementi del menu al passaggio del mouse */
+.navbar li::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Aggiunge un'animazione alla linea sotto gli elementi del menu con navbar bianca al passaggio del mouse */
+.navbar.navbar-white li.nav-item-white::before {
+    background-color: #333;
+}
+
+/* Mostra la linea sotto gli elementi del menu al passaggio del mouse */
+.navbar li:hover::before {
+    visibility: visible;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Cambia il colore degli elementi del menu al passaggio del mouse */
+.navbar li:hover {
+    color: #ccc;
+}
+
+/* Stilizza l'icona hamburger */
+.navbar .icon {
+    font-size: 1.4rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+/* Cambia il colore degli elementi del menu quando la navbar è bianca */
+.navbar.navbar-white .nav-item-white a {
+    color: #333;
+}
+
+/* Cambia il colore degli elementi del menu al passaggio del mouse quando la navbar è bianca */
+.navbar.navbar-white .nav-item-white:hover a {
+    color: #000;
+}
+
+/* Stili per schermi con larghezza massima di 940px */
+@media screen and (max-width: 940px) {
+    /* Mostra l'icona hamburger su schermi più piccoli */
+    .navbar .hamburger {
+        display: block;
+        z-index: 15;
+      
+    }
+
+    /* Modifica il layout del menu della navbar su schermi più piccoli */
+    .navbar .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        width: 250px;
+        height: 100%;
+        top: 0;
+        right: -250px; /* Modificato da left: -250px; a right: -250px; */
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        padding-left: 1.5rem;
+        background: #fff; /* Sfondo bianco */
+        transition: 0.5s ease-in;
+    }
+
+    /* Modifica la posizione del menu attivo su schermi più piccoli */
+    .navbar .nav-menu.active {
+        right: 0; /* Modificato da left: 0; a right: 0; */
+        animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Stilizza gli elementi del menu su schermi più piccoli */
+    .navbar li {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #fff; /* Colore del testo bianco quando la navbar è trasparente */
+    }
+
+    /* Stilizza il pulsante di chiusura (X) */
+    .navbar .close-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Nasconde l'effetto della linea su schermi più piccoli */
+    .navbar li::before {
+        display: none;
+    }
+
+    /* Stilizza gli elementi del menu quando la navbar è trasparente */
+    .navbar:not(.navbar-white) li {
+        color: #666; /* Colore del testo bianco quando la navbar è trasparente */
+    }
+
+    /* Cambia il colore degli elementi del menu al passaggio del mouse quando la navbar è trasparente */
+    .navbar:not(.navbar-white) li:hover {
+        color: #000; /* Colore del testo #333 al passaggio del mouse */
+    }
+    /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è bianca */
+    .navbar.navbar-white .nav-item-white a {
+        color: #000;
+    }
+    /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è bianca */
+    .navbar.navbar-white .nav-item-white:hover a {
+        color: #666;
+    }
+
+    /* Cambia il colore degli elementi del menu su schermi piccoli quando la navbar è trasparente */
+    .navbar:not(.navbar-white) .nav-item-black-small a {
+        color: #000;
+    }
+        /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è trasparente */
+        .navbar:not(.navbar-white) .nav-item-black-small:hover a {
+            color: #666; /* Colore del testo #666 al passaggio del mouse */
+        }
+
+    /* Imposta il colore dell'icona "X" quando la navbar è bianca */
+    .navbar.navbar-white .hamburger .icon {
+        color: #000;
+    }
+
+    /* Imposta il colore dell'icona "X" quando il menu è aperto e la navbar è trasparente */
+    .navbar:not(.navbar-white) .hamburger .icon {
+        color: #fff; /* Colore bianco */
+    }
+
+    .navbar:not(.navbar-white) .nav-menu.active ~ .hamburger .icon {
+        color: #000; /* Colore nero */
+    }
+
+    /* Animazione di uscita del menu */
+    .navbar .nav-menu.slide-out {
+        animation: slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Aggiungi questi stili per l'animazione di rotazione */
+.hamburger .icon {
+    transition: transform 0.3s ease;
+}
+
+.hamburger .icon.rotate {
+    transform: rotate(90deg);
+}
+
+.hamburger .icon.rotate-x {
+    transform: rotate(45deg);
+}
+
+    
+    /* Keyframes per l'animazione di entrata del menu */
+    @keyframes slideIn {
+        0% {
+            right: -250px;
+        }
+        100% {
+            right: 0;
+        }
+    }
+
+    /* Keyframes per l'animazione di uscita del menu */
+    @keyframes slideOut {
+        0% {
+            right: 0;
+        }
+        100% {
+            right: -250px;
+        }
+    }
+
+}
+
+

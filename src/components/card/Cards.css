@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap'); /* Importa il font 'Roboto' da Google Fonts con vari pesi (400, 700, 800) */
+
+body {
+  font-family: 'Roboto', sans-serif; /* Imposta il font 'Roboto' per l'intero documento */
+}
+
+.cards {
+  padding: 4rem; /* Aggiunge 4 rem di padding interno */
+  background: #fff; /* Imposta il colore di sfondo a bianco */
+}
+
+.title-container {
+  position: relative; /* Imposta il contenitore in una posizione relativa per posizionamento degli elementi assoluti */
+  display: flex; /* Usa il layout flexbox */
+  flex-direction: column; /* Dispone gli elementi in una colonna */
+  align-items: center; /* Centra gli elementi orizzontalmente */
+  justify-content: center; /* Centra gli elementi verticalmente */
+  height: 100%; /* Imposta l'altezza al 100% */
+  padding-top: 1%; /* Aggiunge 1% di padding in cima */
+  margin-bottom: 2rem; /* Aggiunge 2 rem di margine sotto */
+}
+
+.background-title, .foreground-title {
+  font-family: 'Roboto', sans-serif; /* Usa il font 'Roboto' */
+  font-weight: 800; /* Imposta il peso del font a 800 (grassetto) */
+}
+
+.background-title {
+  font-size: 175px; /* Imposta la dimensione del font a 175px */
+  color: #fff; /* Imposta il colore del testo a bianco */
+  -webkit-text-stroke: 1px #E0E0E0; /* Aggiunge un contorno al testo di 1px di colore #E0E0E0 */
+}
+
+.foreground-title {
+  position: absolute; /* Posiziona il testo in modo assoluto */
+  top: 50%; /* Posiziona il testo al 50% dall'alto */
+  left: 50%; /* Posiziona il testo al 50% da sinistra */
+  transform: translate(-50%, -50%); /* Centra il testo con una trasformazione */
+  font-size: 50px; /* Imposta la dimensione del font a 50px */
+  color: #000; /* Imposta il colore del testo a nero */
+  padding-top: 1%; /* Aggiunge 1% di padding in cima */
+}
+
+.cards__container {
+  width: calc(100% - 40px); /* Calcola la larghezza come il 100% meno 40px */
+  margin-left: 400px; /* Aggiunge un margine sinistro di 400px */
+  overflow: visible; /* Imposta il comportamento di overflow su visibile */
+  position: relative; /* Posiziona il contenitore in modo relativo */
+  padding-bottom: 60px; /* Aggiunge 60px di padding in basso per fare spazio alle frecce */
+}
+
+.mySwiper {
+  position: static; /* Imposta la posizione a statica */
+}
+
+.cards__item {
+  display: flex; /* Usa il layout flexbox */
+  border-radius: 20px; /* Arrotonda i bordi di 20px */
+  height: 450px; /* Imposta l'altezza a 450px */
+  width: 320px; /* Imposta la larghezza a 320px */
+}
+
+.cards__item__pic-wrap {
+  position: relative; /* Posiziona il contenitore in modo relativo */
+  width: 100%; /* Imposta la larghezza al 100% */
+  height: 100%; /* Imposta l'altezza al 100% */
+  overflow: hidden; /* Nasconde l'overflow */
+  border-radius: 20px; /* Arrotonda i bordi di 20px */
+}
+
+.cards__item__pic-wrap::after {
+  content: attr(data-category); /* Usa l'attributo data-category come contenuto */
+  position: absolute; /* Posiziona l'elemento in modo assoluto */
+  bottom: 10px; /* Posiziona l'elemento 10px dal basso */
+  left: 10px; /* Posiziona l'elemento 10px da sinistra */
+  padding: 6px 8px; /* Aggiunge 6px di padding verticale e 8px di padding orizzontale */
+  max-width: calc(100% - 20px); /* Imposta la larghezza massima come il 100% meno 20px */
+  font-size: 15px; /* Imposta la dimensione del font a 15px */
+  font-weight: 700; /* Imposta il peso del font a 700 */
+  color: #fff; /* Imposta il colore del testo a bianco */
+  border-radius: 5px; /* Arrotonda i bordi di 5px */
+  box-sizing: border-box; /* Include il padding e il bordo nella larghezza e altezza totali */
+}
+
+.cards__item__img {
+  display: block; /* Imposta il display a block */
+  width: 100%; /* Imposta la larghezza al 100% */
+  height: 100%; /* Imposta l'altezza al 100% */
+  object-fit: cover; /* Ridimensiona l'immagine per coprire il contenitore mantenendo il rapporto */
+  transition: transform 0.3s ease; /* Aggiunge una transizione sulla trasformazione con durata di 0.3s */
+}
+
+.cards__item__img:hover {
+  transform: scale(1.05); /* Scala l'immagine del 105% al passaggio del mouse */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute; /* Posiziona le frecce in modo assoluto */
+  bottom: 10px; /* Posiziona le frecce 10px dal basso */
+  top: auto; /* Imposta il valore top su auto */
+  width: 17px; /* Imposta la larghezza a 17px */
+  height: 17px; /* Imposta l'altezza a 17px */
+  background-color: transparent; /* Imposta lo sfondo a trasparente */
+  color: #333; /* Imposta il colore a #333 (grigio scuro) */
+  cursor: pointer; /* Cambia il cursore a puntatore */
+}
+
+.swiper-button-prev {
+  left: 20px; /* Posiziona la freccia sinistra 20px da sinistra */
+}
+
+.swiper-button-next {
+  left: 50px; /* Posiziona la freccia destra 50px da sinistra */
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: ''; /* Non aggiunge contenuto */
+  position: absolute; /* Posiziona l'elemento in modo assoluto */
+  width: 10px; /* Imposta la larghezza a 10px */
+  height: 10px; /* Imposta l'altezza a 10px */
+  border-top: 2px solid #000; /* Aggiunge un bordo superiore nero di 2px */
+  border-right: 2px solid #000; /* Aggiunge un bordo destro nero di 2px */
+}
+
+.swiper-button-prev:after {
+  transform: rotate(-135deg); /* Ruota l'elemento di -135 gradi */
+  left: 6px; /* Posiziona l'elemento 6px da sinistra */
+}
+
+.swiper-button-next:after {
+  transform: rotate(45deg); /* Ruota l'elemento di 45 gradi */
+  right: 6px; /* Posiziona l'elemento 6px da destra */
+}
+
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  border-color: #555; /* Cambia il colore del bordo a #555 (grigio medio) al passaggio del mouse */
+}
+
+@media only screen and (max-width: 1024px) {
+  .swiper-slide {
+    width: 80% !important; /* Imposta la larghezza della slide all'80% su schermi con larghezza massima di 1024px */
+  }
+  .cards__container {
+    width: calc(100% - 20px); /* Calcola la larghezza come il 100% meno 20px */
+    margin-left: 20px; /* Aggiunge un margine sinistro di 20px */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper-slide {
+    width: 90% !important; /* Imposta la larghezza della slide al 90% su schermi con larghezza massima di 768px */
+  }
+  .cards__container {
+    width: 100%; /* Imposta la larghezza al 100% */
+    margin-left: 0; /* Imposta il margine sinistro a 0 */
+  }
+}

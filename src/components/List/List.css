@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap'); /* Importa il font Roboto da Google Fonts */
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Imposta il font della pagina a Roboto */
+}
+
+.list-container {
+  max-width: 1200px; /* Larghezza massima del contenitore */
+  margin: 0 auto; /* Centra il contenitore orizzontalmente */
+  padding: 0px 20px 20px 20px; /* Aggiunge uno spazio interno di 20px */
+}
+
+.title-container {
+  text-align: center; /* Centra il testo del titolo */
+  margin-bottom: 20px; /* Aggiunge uno spazio inferiore di 20px */
+}
+
+.card-container {
+  display: flex; /* Utilizza il flexbox per la disposizione delle card */
+  justify-content: space-between; /* Spazia le card uniformemente */
+  gap: 20px; /* Aggiunge uno spazio di 20px tra le card */
+  padding-bottom: 100px;
+}
+
+.card {
+  position: relative; /* Posizione relativa per permettere il posizionamento assoluto dei figli */
+  background-color: #ffffff; /* Colore di sfondo bianco per le card */
+  border-radius: 8px; /* Angoli arrotondati di 8px */
+  flex: 1; /* Permette alla card di crescere per riempire lo spazio disponibile */
+  max-width: 350px; /* Larghezza massima di 350px per le card */
+  display: flex; /* Utilizza il flexbox per il layout interno */
+  flex-direction: column; /* Dispone gli elementi in una colonna */
+  justify-content: space-between; /* Spazia uniformemente gli elementi verticalmente */
+}
+
+.card-image {
+  width: 100%; /* Imposta la larghezza al 100% del contenitore */
+  height: 250px; /* Altezza fissa di 250px per l'immagine */
+}
+
+.card-image img {
+  width: 100%; /* Imposta la larghezza dell'immagine al 100% del contenitore */
+  height: 100%; /* Imposta l'altezza dell'immagine al 100% del contenitore */
+  border-radius: 8px; /* Arrotonda i bordi dell'immagine */
+}
+
+.card-content {
+  padding: 15px 0px 0px 0px; /* top | right | bottom | left */
+  flex-grow: 1; /* Permette al contenuto di crescere per riempire lo spazio disponibile */
+  display: flex; /* Utilizza il flexbox per il layout interno */
+  flex-direction: column; /* Dispone gli elementi in una colonna */
+  justify-content: space-between; /* Spazia uniformemente gli elementi verticalmente */
+}
+
+.card-content p {
+  font-size: 16px; /* Dimensione del font di 16px */
+  margin-bottom: 20px; /* Aggiunge uno spazio inferiore di 20px */
+}
+
+.card-content h1 {
+  font-size: 24px; /* Dimensione del font di 24px */
+}
+
+.read-more {
+  align-self: flex-start; /* Allinea il pulsante a sinistra */
+  padding: 10px 20px; /* top | right | bottom | left */
+  background-color: transparent; /* Sfondo trasparente per il pulsante */
+  border: 1px solid #000; /* Bordo di 1px con colore nero */
+  color: #000; /* Colore del testo nero */
+  border-radius: 50px; /* Angoli arrotondati di 50px */
+  font-weight: 400; /* Imposta il testo in grassetto */
+  cursor: pointer; /* Cambia il cursore in un puntatore al passaggio del mouse */
+  transition: background-color 0.3s, color 0.3s; /* Aggiunge una transizione di 0.3s per il colore di sfondo e del testo */
+  outline: none; /* Rimuove il bordo di focus */
+}
+
+.read-more:hover, .read-more:focus, .read-more:active {
+  background-color: #000; /* Cambia il colore di sfondo a nero al passaggio del mouse */
+  color: white; /* Cambia il colore del testo a bianco al passaggio del mouse */
+  outline: none; /* Rimuove il bordo di focus */
+  
+  border: 1px solid #000; /* Bordo di 1px con colore nero */
+}
+
+.date-badge {
+  position: absolute; /* Posizione assoluta per permettere il posizionamento in basso a sinistra */
+  bottom: 15px; /* Posiziona a 15px dal fondo */
+  right: 20px; /* Posiziona a 20px da destra */
+  color: black; /* Colore del testo nero */
+  padding: 10px; /* Aggiunge uno spazio interno di 10px */
+  border-radius: 8px; /* Angoli arrotondati di 8px */
+  text-align: center; /* Centra il testo */
+  font-weight: 400; /* Imposta il testo in grassetto */
+  font-size: 16px; /* Dimensione del font di 16px */
+}
