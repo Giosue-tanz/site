@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/giosueaiello.com/static/css/main.a4719ea9.css",
-    "main.js": "/giosueaiello.com/static/js/main.2b5bc3be.js",
-    "static/media/video1.mp4": "/giosueaiello.com/static/media/video1.217bc138c2eb8d98fc50.mp4",
-    "static/media/image2.jpg": "/giosueaiello.com/static/media/image2.12c4ed5827de4e803bab.jpg",
-    "static/media/a3.png": "/giosueaiello.com/static/media/a3.05b7a753ba27bde5afc1.png",
-    "static/media/video.mp4": "/giosueaiello.com/static/media/video.1fd3af3fdc9339d89c13.mp4",
-    "static/media/a1.jpg": "/giosueaiello.com/static/media/a1.1f188a7f43ccb845b5f6.jpg",
-    "static/media/data-bg.png": "/giosueaiello.com/static/media/data-bg.e59a7453e923affba391.png",
-    "static/media/goals1.jpg": "/giosueaiello.com/static/media/goals1.cd6d8475b7e944c05779.jpg",
-    "static/media/image1.jpg": "/giosueaiello.com/static/media/image1.7a067f7a45c026f268e4.jpg",
-    "static/media/notes.jpg": "/giosueaiello.com/static/media/notes.c267686e0ef3c34fd663.jpg",
-    "static/media/logo_tanz.jpeg": "/giosueaiello.com/static/media/logo_tanz.e97bd18897cf0fe17abb.jpeg",
-    "static/media/DESIGNER.otf": "/giosueaiello.com/static/media/DESIGNER.5bce54baf24bd63167e1.otf",
-    "static/media/now.jpg": "/giosueaiello.com/static/media/now.d6ff2e08297a9a35e4c9.jpg",
-    "index.html": "/giosueaiello.com/index.html",
-    "main.a4719ea9.css.map": "/giosueaiello.com/static/css/main.a4719ea9.css.map",
-    "main.2b5bc3be.js.map": "/giosueaiello.com/static/js/main.2b5bc3be.js.map"
+    "main.css": "/static/css/main.dc0e9740.css",
+    "main.js": "/static/js/main.e9256fe7.js",
+    "static/media/video1.mp4": "/static/media/video1.217bc138c2eb8d98fc50.mp4",
+    "static/media/image2.jpg": "/static/media/image2.12c4ed5827de4e803bab.jpg",
+    "static/media/a3.png": "/static/media/a3.05b7a753ba27bde5afc1.png",
+    "static/media/video.mp4": "/static/media/video.1fd3af3fdc9339d89c13.mp4",
+    "static/media/a1.jpg": "/static/media/a1.1f188a7f43ccb845b5f6.jpg",
+    "static/media/data-bg.png": "/static/media/data-bg.e59a7453e923affba391.png",
+    "static/media/goals1.jpg": "/static/media/goals1.cd6d8475b7e944c05779.jpg",
+    "static/media/image1.jpg": "/static/media/image1.7a067f7a45c026f268e4.jpg",
+    "static/media/notes.jpg": "/static/media/notes.c267686e0ef3c34fd663.jpg",
+    "static/media/logo_tanz.jpeg": "/static/media/logo_tanz.e97bd18897cf0fe17abb.jpeg",
+    "static/media/DESIGNER.otf": "/static/media/DESIGNER.5bce54baf24bd63167e1.otf",
+    "static/media/now.jpg": "/static/media/now.d6ff2e08297a9a35e4c9.jpg",
+    "index.html": "/index.html",
+    "main.dc0e9740.css.map": "/static/css/main.dc0e9740.css.map",
+    "main.e9256fe7.js.map": "/static/js/main.e9256fe7.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4719ea9.css",
-    "static/js/main.2b5bc3be.js"
+    "static/css/main.dc0e9740.css",
+    "static/js/main.e9256fe7.js"
   ]
 }
