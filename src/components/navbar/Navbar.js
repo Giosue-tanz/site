@@ -49,10 +49,10 @@ const Navbar = () => {
             <Link to="/">HOME</Link>
           </li>
           <li className={getClassName('nav-item', scroll, 'nav-item-white', 'nav-item-black-small')}>
-            <Link to="/AboutMe">WORKS</Link>
+            <Link to="/Works">WORKS</Link>
           </li>
           <li className={getClassName('nav-item', scroll, 'nav-item-white', 'nav-item-black-small')}>
-            <Link to="/Works">NOTES</Link>
+            <Link to="/Notes">NOTES</Link>
           </li>
           <li className={getClassName('nav-item', scroll, 'nav-item-white', 'nav-item-black-small')}>
             <Link to="/contact">CONTACTS</Link>

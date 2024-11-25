@@ -147,7 +147,7 @@
   opacity: 1;
   border-radius: 50%;
   border: 5px solid rgba(255, 255, 255, .75);
-  top: -32%;
+  top: -33%;
   left: -33%;
   background: rgba(198, 16, 0, 0);
 }
@@ -203,5 +203,103 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/*----------------------------------------------------------------------------------------*/
+/* Media query per schermi piccoli */
+@media (max-width: 768px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra il contenuto */
+    justify-content: space-between; /* Distribuisce lo spazio simmetricamente */
+    height: 100vh;
+    padding: 20px;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 100px; /* Distanza tra il top e l'immagine */
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Allinea il testo a sinistra */
+    width: 100%; /* Riduce la larghezza per un layout più ordinato */
+  }
+
+  .intro {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  .name {
+    font-size: 2.5em;
+    margin: 0;
+  }
+
+  .role {
+    font-size: 1.3em;
+    margin: 5px 0;
+  }
+
+  
+
+  /* Bottoni posizionati in basso */
+  .btn-container {
+    display: flex;
+    flex-direction: row; /* Bottoni affiancati */
+    justify-content: center; /* Centrati orizzontalmente */
+    align-items: center;
+    gap: 20px; /* Distanza tra i bottoni */
+    margin-top: 0px; /* Distanza tra il testo e i bottoni */
+    margin-bottom: 100px; /* Spazio tra i bottoni e il fondo */
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .play-btn {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient( rgba(0, 0, 0, 0.8) 60%, rgba(255, 255, 255, 1) 70%);
+    border-radius: 50%;
+    position: relative; 
+    }
+    .play-btn:hover {
+      width: 50px;
+      height: 50px;
+      background: radial-gradient( rgba(0, 0, 0, 0.8) 60%, rgba(255, 255, 255, 1) 70%);
+      border-radius: 50%;
+      position: relative; 
+    }
+
+    
+ 
+
+  .text1 {
+    font-size: 12px;
+    padding-left: 25px;
+    margin-top: 5px; /* Piccolo margine sopra la scritta */
+    text-align: center; /* Centra la scritta */
+    color: #fff; /* Colore del testo */
   }
 }

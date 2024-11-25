@@ -20,20 +20,18 @@ const Abhome = () => {
                     <div className="personal-info">
                         <div className="column">
                             <p><strong>Name:</strong> Giosuè Aiello</p>
-                            <p><strong>Birthday:</strong> 4 November 2004</p>
-                            <p><strong>Degree:</strong> Graduate</p>
-                            <p><strong>Experience:</strong> Continued </p>
+                            <p><strong>Degree:</strong>  Undergraduate Physics student</p>
+                            <p><strong>Freelance:</strong> Available</p>
                         </div>
                         <div className="column">
-                            <p><strong>Phone:</strong> +39 3920294713</p>
                             <p><strong>Email:</strong> giosue.tanz@gmail.com </p>
-                            <p><strong>Address:</strong> Street, New York</p>
-                            <p><strong>Freelance:</strong> Available</p>
+                            <p><strong>Birthday:</strong> 4 November 2004</p>
+                            <p><strong>Address:</strong> Pisa, Italy</p>
                         </div>
                     </div>
 
                     <div className="button-container">
-                        <button className="about-me-btn hire-me">Hire Me</button>
+                        <button className="about-me-btn hire-me">Contact Me</button>
                         <button className="about-me-btn learn-more">Learn More</button>
                     </div>
                 </div>
