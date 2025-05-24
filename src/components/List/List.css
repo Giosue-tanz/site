@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap');
+
+/* Stile generale */
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Contenitore principale */
+.list-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 128px;
+}
+
+/* Titolo */
+.title-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.background-title,
+.foreground-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+
+.background-title {
+    font-size: 175px;
+    color: #fff;
+    -webkit-text-stroke: 1px #E0E0E0;
+}
+
+.foreground-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #000;
+    padding-top: 1%;
+}
+
+/* Contenitore delle card */
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 100px;
+    overflow: visible;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    max-width: 350px;
+    height: 475px;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: scale(1.05); /* Zoom sull'immagine di sfondo */
+}
+
+/* Contenuto delle card */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+    padding-top: 260px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Footer delle card */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.date-badge {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.read-more {
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: rgba(255, 255, 255, 0.25);
+    
+}
+
+@media (min-width: 820px){
+/* Bottoni di navigazione: visibili su desktop */
+.custom-prev,
+.custom-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-prev {
+    left: -50px;
+}
+
+.custom-next {
+    right: -50px;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-prev svg,
+.custom-next svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+}
+}
+@media (max-width: 768px) {
+    /* Stile frecce Swiper minimaliste */
+.custom-prev,
+.custom-next {
+  position: absolute;
+  bottom: 10px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; /* Grigio */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  left: 43px;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  color: #333; /* Nero al passaggio */
+}
+
+.custom-prev svg,
+.custom-next svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+}
+
+/* Contenitore principale (mobile) */
+@media (max-width: 768px) {
+    .list-container {
+        padding: 20px;
+    }
+
+    .title-container {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .background-title {
+        font-size: 80px;
+        -webkit-text-stroke: 0.5px #E0E0E0;
+    }
+
+    .foreground-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .card-container {
+        padding-bottom: 60px;
+    }
+
+    .card {
+        width: 220px;
+        height: 300px;
+        padding: 10px;
+    }
+
+    .card-content {
+        padding: 10px;
+    }
+
+    .card-content h1 {
+        font-size: 16px;
+        padding-top: 165px;
+        margin-bottom: 5px;
+    }
+
+    .card-content p {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 40px;
+    }
+
+    .card-footer {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .read-more {
+        font-size: 12px;
+        padding: 4px 8px;
+        margin-bottom: 0px;
+    }
+
+    .date-badge {
+        font-size: 12px;
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+}

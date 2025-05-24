@@ -1,0 +1,160 @@
+<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body{
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    .container{
+      max-width: 1170px;
+      margin:auto;
+    }
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    ul{
+      list-style: none;
+    }
+    .footer{
+      background-color: #24262b;
+        padding: 70px 0;
+    }
+    .footer-col{
+       width: 25%;
+       padding: 0 15px;
+    }
+    .footer-col h4{
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+    .footer-col h4::before{
+      content: '';
+      position: absolute;
+      left:0;
+      bottom: -10px;
+      background-color: #fff;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+    .footer-col ul li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a{
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+      color: #ffffff;
+      padding-left: 8px;
+    }
+    .footer-col .social-links a{
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: #9d9696;
+      margin:0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+    .footer-col .social-links a:hover{
+      color: #24262b;
+      background-color: #ffffff;
+    }
+    
+    /* new media query for max-width: 940px */
+    @media (max-width: 940px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+          height: 200px;
+        }
+        .row {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-col {
+          width: 100%;
+          padding: 15px;
+        }
+        .footer-col ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        .footer-col ul li {
+          flex: 1 1 auto;
+          padding: 5px 10px;
+        }
+        .footer-col h4::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .footer-col .social-links {
+          justify-content: center;
+        }
+      }
+     
+      </style>
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>Tanz</h4>
+              <ul>
+                <li><a href="https://www.giosueaiello.com/404">about us</a></li>
+                <li><a href="https://www.giosueaiello.com/404">our services</a></li>
+                <li><a href="https://www.giosueaiello.com/404">privacy policy</a></li>
+                <li><a href="https://www.giosueaiello.com/404">affiliate program</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Profile</h4>
+              <ul>
+                <li><a href="https://www.giosueaiello.com/404">about me</a></li>
+                <li><a href="https://www.giosueaiello.com/404">school</a></li>
+                <li><a href="https://www.giosueaiello.com/404">goals</a></li>
+                <li><a href="https://www.giosueaiello.com/404">curriculum</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>online shop</h4>
+              <ul>
+                <li><a href="https://www.giosueaiello.com/404">T-shirts</a></li>
+                <li><a href="https://www.giosueaiello.com/404">bag</a></li>
+                <li><a href="https://www.giosueaiello.com/404">shoes</a></li>
+                <li><a href="https://www.giosueaiello.com/404">band</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <a href="https://www.facebook.com/GiosueAiello.tanz"><img width="40" height="40" src="https://img.icons8.com/fluency-systems-regular/48/facebook-new--v1.png" alt="facebook-new--v1"/></a>
+                <a href="https://twitter.com/giosue_aiello"><img width="40" height="40" src="https://img.icons8.com/fluency-systems-regular/48/twitterx.png" alt="twitterx"/></a>
+                <a href="https://www.instagram.com/giosue.aie/"><img width="40" height="40" src="https://img.icons8.com/fluency-systems-regular/48/instagram-new--v1.png" alt="instagram-new--v1"/></a>
+                <a href="https://www.linkedin.com/in/giosu%C3%A8-aiello-425474243/"><img width="40" height="40" src="https://img.icons8.com/fluency-systems-regular/48/linkedin.png" alt="linkedin"/></a>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>

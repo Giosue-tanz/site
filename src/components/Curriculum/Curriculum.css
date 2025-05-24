@@ -1,0 +1,83 @@
+/* Contenuto del curriculum sotto il video */
+.curriculum-content {
+    position: relative;
+    top: 50vh; /* Sposta il contenuto sotto il video, che occupa 50vh */
+    max-width: 800px;
+    margin: 0 auto 20px; /* Centrato orizzontalmente, spazio sotto */
+    padding: 20px;
+    color: #333; /* Colore scuro per contrasto */
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo chiaro semi-trasparente */
+    border-radius: 8px;
+    z-index: 5; /* Sopra il video */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+}
+
+/* Sezioni principali */
+.education, .experience, .skills, .projects {
+    margin-bottom: 40px;
+}
+
+/* Titoli delle sezioni */
+h2 {
+    color: #24262b;
+    border-bottom: 2px solid #24262b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Elementi individuali */
+.education-item, .experience-item, .project-item {
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #24262b;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Liste senza pallini */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Stile per gli elementi delle liste con frecce personalizzate */
+.experience ul li, .skills ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.experience ul li:before, .skills ul li:before {
+    content: '➜'; /* Freccia personalizzata */
+    position: absolute;
+    left: 0;
+    color: #24262b;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 940px) {
+    .curriculum-content {
+        max-width: 90%; /* Riduce la larghezza su schermi piccoli */
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
