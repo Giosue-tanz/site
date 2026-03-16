@@ -1,1 +1,0 @@
-import{j as s}from"./index-KRvtCr0k.js";/* empty css            */const e=()=>s.jsx("div",{className:"WiC",children:s.jsx("div",{className:"container",children:s.jsx("div",{className:"content",children:s.jsx("h2",{children:"Website in costruction"})})})}),t=()=>s.jsx(s.Fragment,{children:s.jsx(e,{})});export{t as default};
