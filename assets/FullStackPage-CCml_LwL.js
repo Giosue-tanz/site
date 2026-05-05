@@ -1,4 +1,4 @@
-import{r as o,j as e}from"./index-CQnaLROM.js";import{m as t}from"./proxy-YtXl6k7x.js";const f=()=>{const n=o.useRef(null);o.useEffect(()=>{window.scrollTo(0,0)},[]);const l=()=>{var s;(s=n.current)==null||s.scrollIntoView({behavior:"smooth"})},i={hidden:{opacity:0,y:40},visible:{opacity:1,y:0,transition:{duration:.8,ease:[.22,1,.36,1]}}},r={hidden:{},visible:{transition:{staggerChildren:.1}}},d=s=>{s.preventDefault();const a=new FormData(s.target),m=a.get("name"),p=a.get("email"),c=a.get("service"),h=a.get("message"),u=`New Project Inquiry: ${c}`,j=`Name: ${m}
+import{r as o,j as e}from"./index-Bt6rQczb.js";import{m as t}from"./proxy-u7k4nLns.js";const f=()=>{const n=o.useRef(null);o.useEffect(()=>{window.scrollTo(0,0)},[]);const l=()=>{var s;(s=n.current)==null||s.scrollIntoView({behavior:"smooth"})},i={hidden:{opacity:0,y:40},visible:{opacity:1,y:0,transition:{duration:.8,ease:[.22,1,.36,1]}}},r={hidden:{},visible:{transition:{staggerChildren:.1}}},d=s=>{s.preventDefault();const a=new FormData(s.target),m=a.get("name"),p=a.get("email"),c=a.get("service"),h=a.get("message"),u=`New Project Inquiry: ${c}`,j=`Name: ${m}
 Email: ${p}
 Service Interested: ${c}
 
