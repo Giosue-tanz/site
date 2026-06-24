@@ -14,6 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .about-me .background-title,
@@ -29,10 +30,6 @@ body {
 }
 
 .about-me .foreground-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 50px;
   color: #000;
   padding-top: 1%;
@@ -104,17 +101,17 @@ body {
   background-color: transparent;
   color: #000;
   border: 1px solid #000;
-  padding: 15px 25px; /* Increased padding */
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
-  font-size: 15px; /* Increased font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
   transition: background-color 0.4s ease, color 0.4s ease;
   cursor: pointer;
   border-radius: 30px;
-  white-space: nowrap; /* Prevent buttons from having extra space */
+  white-space: nowrap;
 }
 
 .about-me-btn:hover {
@@ -123,97 +120,231 @@ body {
   border-color: #000;
 }
 
-.hire-me, .learn-more {
+.hire-me,
+.learn-more {
   background-color: transparent;
   color: #000;
   border: 1px solid #000;
 }
-/* Media Query per dispositivi mobili */
-@media (max-width: 1284px) {
+
+/* Rimuovi padding/margin superiore da about-me e title-container */
+.about-me {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background: #fff;
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
+
+.about-me .title-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Media Query per dispositivi mobili (fino a 768px) */
+@media (max-width: 768px) {
   .about-me {
-    padding: 20px 20px 20px 0px;
+    padding: 20px 0 60px 0;
+    min-height: calc(100vh - 60px);
+    background: #fff;
   }
 
   .about-me .title-container {
-    align-items: center; /* Centro il contenuto */
-    text-align: center; /* Testo centrato */
-    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .about-me .background-title {
-    font-size: 80px; /* Ridotto per dispositivi mobili */
+    font-size: 80px;
     -webkit-text-stroke: 0.5px #E0E0E0;
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .about-me .foreground-title {
     font-size: 30px;
-    margin-bottom: 10px; /* Spazio sotto il titolo */
-    padding-left: 20px;
+    margin-bottom: 10px;
+    padding-left: 0;
   }
 
   .contact-wrapper1 {
     display: flex;
-    flex-direction: column; /* Disposizione verticale */
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* Spazio tra immagine e testo */
-    max-width: 100%; /* Usa tutta la larghezza disponibile */
+    gap: 20px;
+    max-width: 100%;
+    padding: 0;
   }
 
   .img-profile {
-    width: 265px; /* Ridotta per schermi piccoli */
+    width: 90vw;
+    max-width: 340px;
+    min-width: 220px;
     height: auto;
-    margin: 0 auto 10px; /* Centro l'immagine e aggiungo spazio sotto */
-    transform: translateX(20px); /* Sposto l'immagine di 20px a destra */
+    margin: 10px auto 10px auto;
+    display: block;
+    transform: none;
+  }
+
+  .text-container {
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-top: 30px;
+    padding: 0;
+    width: 90vw;
+    max-width: 340px;
+    min-width: 220px;
+    margin: 30px auto 0 auto;
+    box-sizing: border-box;
+  }
+
+  .text-container h2 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .column {
+    padding: 0;
+    margin: 0;
+  }
+
+  .column p {
+    font-size: 12px;
+    line-height: 1.3;
+    margin: 0 0 2px 0;
+    padding: 0;
+    list-style: disc inside;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .about-me-btn {
+    font-size: 14px;
+    padding: 12px 0px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #000;
+    border: 1px solid #000;
+  }
+}
+
+/* Media Query per tablet (769px - 1284px) */
+@media (min-width: 769px) and (max-width: 1284px) {
+  .about-me {
+    padding: 20px 20px 20px 0px;
+    min-height: calc(100vh - 60px);
+    background: #fff;
+  }
+
+  .about-me .title-container {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-me .background-title {
+    font-size: 175px;
+    -webkit-text-stroke: 1px #E0E0E0;
+    padding-left: 0;
+  }
+
+  .about-me .foreground-title {
+    font-size: 50px;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .contact-wrapper1 {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    max-width: 85%;
+    padding: 0 20px;
+    margin: 0 auto;
+    align-items: center;
+    /* centra verticalmente l'immagine rispetto al testo */
+  }
+
+  .img-profile {
+    width: 100%;
+    max-width: 340px;
+    min-width: 220px;
+    height: auto;
+    margin: 0;
+    display: block;
+    transform: none;
   }
 
   .text-container {
     align-items: flex-start;
     text-align: left;
-    padding-right: 20px;
-    width: 100%; /* Usa tutta la larghezza */
+    width: 100%;
+    max-width: 600px;
+    min-width: 220px;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
   }
 
   .text-container h2 {
-    font-size: 1.3rem; /* Migliorato il font size */
-    text-align: justify; /* Giustificato */
-    margin-bottom: 10px; /* Spazio sotto il titolo */
+    font-size: 26px;
+    margin-bottom: 12px;
+    text-align: left;
   }
 
   .text-container p {
-    font-size: 13px; /* Font size ridotto per leggibilità */
-    line-height: 1.4; /* Migliorata la spaziatura tra righe */
-    text-align: justify;
-    margin-bottom: 10px; /* Spazio tra paragrafi */
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
   }
 
   .personal-info {
     display: grid;
-    grid-template-columns: 1fr; /* Una colonna */
-    width: 100%; /* Usa tutta la larghezza */
-    text-align: left; /* Testo allineato a sinistra */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0;
+    text-align: left;
   }
 
   .column p {
-    font-size: 12px; /* Ridotto per dispositivi mobili */
-    line-height: 1.1; /* Migliorata leggibilità */
-  }
-
-  .column p strong {
-    display: inline-block;
-    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.1;
   }
 
   .button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Bottoni su due colonne affiancate */
-    width: 100%; /* Allineati alla larghezza del contenuto */
-    margin-top: 0px; /* Spazio sopra i bottoni */
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
   }
 
   .about-me-btn {
-    font-size: 13px; /* Font size più piccolo */
-    padding: 8px 0px; /* Spaziatura ridotta */
-    border-radius: 15px; /* Bottoni più arrotondati */
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 18px;
   }
 }

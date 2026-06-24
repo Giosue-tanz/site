@@ -1,83 +1,376 @@
-/* Contenuto del curriculum sotto il video */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+/* Container per il video */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-container .video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Titolo Curriculum centrato sul video - Coerente con lo stile originale */
+.title-curriculum {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    color: #fff;
+    /* text-shadow rimosso */
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1.5px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.1;
+}
+
+.title-line-w {
+    position: absolute;
+    top: calc(50% + 2.8rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background-color: #fff;
+    z-index: 2;
+    /* box-shadow rimosso */
+}
+
+/* Contenuto del curriculum */
 .curriculum-content {
     position: relative;
-    top: 50vh; /* Sposta il contenuto sotto il video, che occupa 50vh */
-    max-width: 800px;
-    margin: 0 auto 20px; /* Centrato orizzontalmente, spazio sotto */
-    padding: 20px;
-    color: #333; /* Colore scuro per contrasto */
-    background-color: rgba(255, 255, 255, 0.9); /* Sfondo chiaro semi-trasparente */
-    border-radius: 8px;
-    z-index: 5; /* Sopra il video */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
+    margin-top: -56px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Box shadow to lift it off the background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    z-index: 10;
+    font-family: 'Fira Sans', sans-serif;
+    /* LaTeX sets left/right margins to 0, but we are inside a container. 
+       We will use the internal padding to simulate the page structure. */
 }
 
-/* Sezioni principali */
-.education, .experience, .skills, .projects {
-    margin-bottom: 40px;
+/* Flex Container matching LaTeX Minipages 
+   Left: 33%, Right: 56% (approx 1.7 ratio)
+*/
+.curriculum-columns {
+    display: flex;
+    align-items: stretch;
+    /* Stretch to have equal height backgrounds if possible */
+    background: #fff;
 }
 
-/* Titoli delle sezioni */
-h2 {
-    color: #24262b;
-    border-bottom: 2px solid #24262b;
-    padding-bottom: 10px;
+/* --- SIDEBAR (Left Column) --- */
+.sidebar {
+    width: 35%;
+    /* Approx 0.33 / (0.33+0.56) is ~37%. Let's go with 35% */
+    background-color: #304263;
+    /* cvblue */
+    color: #fff;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
-    font-size: 1.8rem;
 }
 
-/* Elementi individuali */
-.education-item, .experience-item, .project-item {
-    margin-bottom: 20px;
+.sidebar .cv-name {
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    /* \textsc */
+    text-align: center;
+    line-height: 1.2;
 }
 
-h3 {
-    color: #24262b;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+.profile-pic {
+    width: 180px;
+    /* Adjust as needed */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Optional: User image description didn't specify, but often looks better. Or keep square if strict to LaTeX? LaTeX has includegraphics width=0.6\textwidth. */
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-p {
-    margin: 5px 0;
-    line-height: 1.6;
-}
-
-/* Liste senza pallini */
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-/* Stile per gli elementi delle liste con frecce personalizzate */
-.experience ul li, .skills ul li {
-    position: relative;
-    padding-left: 20px;
+/* Sidebar Headings (\headleft style) */
+.sidebar-heading-wrapper {
     margin-bottom: 10px;
 }
 
-.experience ul li:before, .skills ul li:before {
-    content: '➜'; /* Freccia personalizzata */
-    position: absolute;
-    left: 0;
-    color: #24262b;
+.sidebar-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    /* \textsc */
+    letter-spacing: 0.5px;
+}
+
+.heading-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+    /* \hrulefill-ish */
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* Sidebar Lists */
+.sidebar-block ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar-block li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.detail-row,
+.contact-line {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* Links in Sidebar */
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: opacity 0.2s;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+
+/* --- MAIN (Right Column) --- */
+.main {
+    width: 65%;
+    /* Rest of width */
+    padding: 40px 40px;
+    color: #232323;
+}
+
+/* Section Titles (\headright style) */
+.section-title {
+    color: #304263;
+    /* cvblue */
+    font-size: 1.6rem;
+    font-weight: 400;
+    /* Regular weight for Small Caps, or Bold? LaTeX has \headright -> \Large\color{cvblue} ... wait, no \textbf. Just \textsc. */
+    text-transform: uppercase;
+    margin: 30px 0 10px 0;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #304263;
+    /* \hrulefill in blue */
+    padding-bottom: 5px;
+    display: block;
+}
+
+.main>section:first-child .section-title {
+    margin-top: 0;
+}
+
+.cv-profile {
+    /* Explicitly reset background and text color to override any potential .profile conflicts */
+    background: transparent !important;
+    color: inherit !important;
+    display: block !important;
+    height: auto !important;
+    padding: 0 !important;
+    align-items: initial !important;
+    justify-content: initial !important;
+}
+
+.cv-profile p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #222;
+    text-align: justify;
+}
+
+/* Experience & Education Items */
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    /* Handle mobile wrapping */
+}
+
+.item-header h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #222;
+    font-weight: 400;
+}
+
+/* \textsc style for roles */
+.role-title {
+    display: inline-block;
+    text-transform: uppercase;
+    /* \textsc */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.item-header a {
+    color: #304263;
+    text-decoration: none;
+}
+
+.item-header .dates {
+    font-weight: 700;
+    /* \textbf{#1} in \dates */
+    font-size: 1rem;
+    color: #000;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.small-desc {
+    font-size: 0.95rem;
+    /* \small */
+    line-height: 1.5;
+    color: #444;
+    margin: 4px 0 0 0;
+}
+
+.diamond {
+    color: #304263;
+    /* Optional stylistic choice, or black */
+    margin-right: 6px;
+    font-size: 0.8rem;
+}
+
+/* Separator for items if needed, or margin */
+.experience-division {
+    height: 15px;
+    /* \par\vskip.5ex plus .4ex approx */
+}
+
+/* Separator before Download Section */
+.cv-separator {
+    height: 2px;
+    background-color: #e0e0e0;
+    margin-top: 50px;
+    margin-bottom: 40px; /* Spazio tra la linea e i bottoni */
+}
+
+/* Download Section */
+.cv-download-section {
+    display: flex;
+    gap: 30px; /* Più spazio tra i due bottoni */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #304263;
+    background-color: #304263;
+    color: #fff;
+}
+
+.cv-download-btn:hover {
+    background-color: transparent;
+    color: #304263;
+}
+
+/* Bottone Italiano - Stile speculare */
+.cv-download-btn-it {
+    background-color: transparent;
+    color: #304263;
+}
+
+.cv-download-btn-it:hover {
+    background-color: #304263;
+    color: #fff;
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 940px) {
-    .curriculum-content {
-        max-width: 90%; /* Riduce la larghezza su schermi piccoli */
-        padding: 15px;
+@media screen and (max-width: 900px) {
+    .curriculum-columns {
+        flex-direction: column;
     }
 
-    h2 {
-        font-size: 1.6rem;
+    .sidebar {
+        width: 100%;
+        padding: 30px;
     }
 
-    h3 {
-        font-size: 1.2rem;
+    .main {
+        width: 100%;
+        padding: 30px;
     }
 
-    p {
-        font-size: 1rem;
+    .item-header {
+        flex-direction: column;
+    }
+
+    .item-header .dates {
+        margin-left: 0;
+        margin-top: 4px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title-curriculum {
+        font-size: 36px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
     }
 }

@@ -1,12 +1,17 @@
-.navbar, .navbar .logo h1, .navbar .icon, .navbar li {
+.navbar,
+.navbar .logo h1,
+.navbar .icon,
+.navbar li,
+.navbar .nav-menu a {
     transition: all 0.3s ease;
+    color: #fff !important;
 }
 
 .navbar {
     width: 100%;
     height: 80px;
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .navbar-white {
@@ -14,8 +19,11 @@
     height: 60px;
 }
 
-.navbar.navbar-white .logo, .navbar.navbar-white .icon, .navbar.navbar-white .nav-item-white, .navbar.navbar-white .nav-item-white:hover {
-    color: #333;
+.navbar.navbar-white .logo,
+.navbar.navbar-white .icon,
+.navbar.navbar-white .nav-item-white,
+.navbar.navbar-white .nav-item-white:hover {
+    color: #333 !important;
 }
 
 .navbar .container {
@@ -35,57 +43,66 @@
 .navbar .logo h1 {
     font-weight: 300;
     font-size: 2rem;
+    color: inherit !important;
+    /* Usa lo stesso colore delle altre scritte */
+    transition: color 0.3s;
 }
 
 .navbar .nav-menu {
-    list-style-type: none; /* Rimuove i pallini */
-    margin: 0; /* Rimuove il margine */
-    padding: 0; /* Rimuove il padding */
-    display: flex; /* Dispone gli elementi in linea */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    height: 100%;
+    list-style: none;
 }
 
 .hamburger {
     display: none;
     padding: 1rem;
+    cursor: pointer;
 }
 
-.navbar li {
-    padding: 1rem;
-    font-weight: 400;
-    color: #ccc;
+/* Stili base per le voci di menu */
+.nav-menu a {
+    color: #fff;
+    padding: 0.5rem 0;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
     position: relative;
-    list-style: none; /* Assicurati che i pallini siano rimossi */
+    display: inline-block;
 }
 
 
 /* Aggiunge un'animazione alla linea sotto gli elementi del menu al passaggio del mouse */
-.navbar li::before {
+.nav-menu a::before {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #ccc;
+    background-color: #fff;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
 
 /* Aggiunge un'animazione alla linea sotto gli elementi del menu con navbar bianca al passaggio del mouse */
-.navbar.navbar-white li.nav-item-white::before {
+.navbar.navbar-white .nav-menu a::before {
     background-color: #333;
 }
 
 /* Mostra la linea sotto gli elementi del menu al passaggio del mouse */
-.navbar li:hover::before {
+.nav-menu a:hover::before {
     visibility: visible;
     width: 100%;
     background-color: #fff;
 }
 
 /* Cambia il colore degli elementi del menu al passaggio del mouse */
-.navbar li:hover {
-    color: #ccc;
+.nav-menu a:hover {
+    color: #fff !important;
 }
 
 /* Stilizza l'icona hamburger */
@@ -93,134 +110,210 @@
     font-size: 1.4rem;
     color: #fff;
     transition: color 0.3s ease;
+    font-weight: 300;
+    /* Rende le tre linee dell'hamburger più sottili */
+    stroke-width: 1.2px;
 }
+
 /* Cambia il colore degli elementi del menu quando la navbar è bianca */
 .navbar.navbar-white .nav-item-white a {
-    color: #333;
+    color: #000 !important;
 }
 
 /* Cambia il colore degli elementi del menu al passaggio del mouse quando la navbar è bianca */
 .navbar.navbar-white .nav-item-white:hover a {
-    color: #000;
+    color: #666 !important;
 }
 
-/* Stili per schermi con larghezza massima di 1284px */
-@media screen and (max-width: 1284px) {
-    /* Mostra l'icona dell'hamburger su schermi più piccoli */
+/* Padding per evitare che la navbar fissa copra il contenuto */
+.about-me {
+    padding-top: 80px;
+}
+
+/* Se vuoi gestire anche la navbar bianca (scroll attivo): */
+.navbar-white~.about-me {
+    padding-top: 60px;
+}
+
+/* Stili per schermi con larghezza massima di 940px */
+@media screen and (max-width: 940px) {
+
+    /* Mostra l'icona hamburger su schermi più piccoli */
     .navbar .hamburger {
         display: block;
         z-index: 15;
-        position: absolute;
-        right: 1rem;
-        height: 80px; /* Altezza navbar trasparente */
+
+    }
+
+    .navbar .logo {
         display: flex;
-        align-items: center; /* Allinea verticalmente */
-        justify-content: center; /* Centra l'icona */
-    }
-
-    /* Adattamento per navbar bianca */
-    .navbar.navbar-white .hamburger {
-        height: 60px; /* Altezza navbar bianca */
-        top: 0; /* Inizia dall'alto */
-        display: flex;
-        align-items: center; /* Allinea verticalmente */
-        justify-content: center; /* Centra l'icona */
-    }
-
-    /* Riduce la dimensione del testo del logo per schermi più piccoli */
-    .navbar.navbar-white .logo h1 {
-        font-size: 1.5rem; /* Imposta una dimensione del logo più piccola */
-    }
-
-    /* Modifica il layout del menu per schermi più piccoli */
-    .navbar .nav-menu {
-        position: fixed;
-        flex-direction: column;
-        width: 250px;
-        height: 100%;
-        top: 0;
-        right: -250px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 3rem;
-        padding-left: 1.5rem;
-        background: #fff;
-        transition: 0.5s ease-in;
-    }
-
-    /* Mostra il menu attivo su schermi più piccoli */
-    .navbar .nav-menu.active {
-        right: 0;
-        animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    /* Stile degli elementi del menu per schermi più piccoli */
-    .navbar li {
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-        font-weight: 400;
+        align-items: center;
         color: #fff;
     }
 
-    /* Stile del pulsante di chiusura (X) */
-    .navbar .close-menu {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 1.5rem;
+    .navbar .logo h1 {
+        font-weight: 250;
+        font-size: 1.7rem;
+        color: inherit !important;
+        /* Usa lo stesso colore delle altre scritte */
+        transition: color 0.3s;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.45); /* No blur, just dim */
+        z-index: 10;
         cursor: pointer;
     }
 
-    /* Nasconde la linea sotto gli elementi del menu per schermi più piccoli */
+    /* Modifica il layout del menu della navbar su schermi più piccoli */
+    .navbar .nav-menu {
+        z-index: 11;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        list-style: none;
+    }
+
+    /* Modifica la posizione del menu attivo su schermi più piccoli */
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Stilizza gli elementi del menu su schermi più piccoli */
+    .navbar .nav-menu a {
+        width: 100%;
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: #222 !important;
+        background: transparent;
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        margin: 0;
+        transition: all 0.2s ease;
+    }
+
+    .navbar .nav-menu a:hover {
+        background: #f8f8f8;
+        color: #0078d4 !important;
+        transform: translateX(5px);
+    }
+
     .navbar li::before {
         display: none;
     }
 
-    /* Cambia il colore del testo del menu quando la navbar è trasparente */
-    .navbar:not(.navbar-white) li {
-        color: #666;
+    .navbar .nav-menu a {
+        color: #222 !important;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: color 0.2s;
+        padding: 0;
+        background: none;
     }
 
-    .navbar:not(.navbar-white) li:hover {
-        color: #000;
+    .navbar .nav-menu a:hover {
+        color: #0078d4 !important;
+        background: none;
     }
 
-    /* Cambia il colore del testo del menu quando la navbar è bianca */
+    /* X di chiusura minimalista e visibile, sempre nera */
+    .navbar .close-menu {
+        color: #000 !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        opacity: 0.95;
+        transition: color 0.2s, opacity 0.2s;
+        line-height: 1;
+        box-shadow: none;
+    }
+
+    .navbar .close-menu:hover {
+        color: #000 !important;
+        opacity: 1;
+    }
+
+    /* Hamburger icon minimalista: bianco, nero su hover, 3px più piccolo */
+    .navbar .hamburger .icon {
+        color: #fff !important;
+        font-size: 1.8rem;
+        /* ridotto di 3px rispetto a 2rem */
+        background: none;
+        border: none;
+        transition: color 0.2s;
+        font-weight: 0;
+        /* Rende le tre linee dell'hamburger più sottili anche su mobile */
+        stroke-width: 0.5px;
+    }
+
+    .navbar .hamburger .icon:hover {
+        color: #000 !important;
+    }
+
+    /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è bianca */
     .navbar.navbar-white .nav-item-white a {
-        color: #000;
+        color: #000 !important;
     }
 
+    /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è bianca */
     .navbar.navbar-white .nav-item-white:hover a {
-        color: #666;
+        color: #666 !important;
     }
 
+    /* Cambia il colore degli elementi del menu su schermi piccoli quando la navbar è trasparente */
     .navbar:not(.navbar-white) .nav-item-black-small a {
         color: #000;
     }
 
+    /* Cambia il colore degli elementi del menu al passaggio del mouse su schermi piccoli quando la navbar è trasparente */
     .navbar:not(.navbar-white) .nav-item-black-small:hover a {
         color: #666;
+        /* Colore del testo #666 al passaggio del mouse */
     }
 
-    /* Cambia il colore dell'icona "X" quando la navbar è bianca */
+    /* Imposta il colore dell'icona "X" quando la navbar è bianca */
     .navbar.navbar-white .hamburger .icon {
         color: #000;
     }
 
-    /* Cambia il colore dell'icona "X" quando il menu è aperto e la navbar è trasparente */
+    /* Imposta il colore dell'icona "X" quando il menu è aperto e la navbar è trasparente */
     .navbar:not(.navbar-white) .hamburger .icon {
         color: #fff;
+        /* Colore bianco */
     }
 
-    .navbar:not(.navbar-white) .nav-menu.active ~ .hamburger .icon {
+    .navbar:not(.navbar-white) .nav-menu.active~.hamburger .icon {
         color: #000;
+        /* Colore nero */
     }
 
+    /* Animazione di uscita del menu */
     .navbar .nav-menu.slide-out {
-        animation: slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        transform: translateX(100%);
     }
 
-    /* Anima la rotazione dell'icona */
+    /* Aggiungi questi stili per l'animazione di rotazione */
     .hamburger .icon {
         transition: transform 0.3s ease;
     }
@@ -233,32 +326,207 @@
         transform: rotate(45deg);
     }
 
-    @keyframes slideIn {
-        0% {
-            right: -250px;
-        }
-        100% {
-            right: 0;
-        }
-    }
-
-    @keyframes slideOut {
-        0% {
-            right: 0;
-        }
-        100% {
-            right: -250px;
-        }
-    }
-
-    .navbar .logo {
+    .navbar .close-menu,
+    .animated-close {
+        position: fixed;
+        top: 1.2rem;
+        right: 1.2rem;
+        font-size: 1.7rem;
+        color: #000 !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        opacity: 0.95;
+        line-height: 1.2;
+        box-shadow: none;
+        padding: 0.2em 0.4em;
+        border-radius: 50%;
+        transition: color 0.18s, opacity 0.18s, transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
         display: flex;
         align-items: center;
-        color: #fff;
+        justify-content: center;
+        /* Sottile e moderna */
+        font-weight: 300;
+        letter-spacing: -2px;
     }
 
-    .navbar .logo h1 {
-        font-weight: 300;
-        font-size: 1.7rem;
+    .navbar .close-menu:hover,
+    .animated-close:hover {
+        color: #0078d4 !important;
+        background: #f2f2f2;
+        opacity: 1;
+        transform: scale(1.08) rotate(0deg);
+    }
+
+    /* Bottone X minimalista, sottile, animazione X <-> + */
+    .navbar .close-menu,
+    .animated-close {
+        position: fixed;
+        top: 1.2rem;
+        right: 1.2rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        opacity: 0.95;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .navbar .close-menu .close-x,
+    .animated-close .close-x {
+        position: relative;
+        width: 1.7rem;
+        height: 1.7rem;
+        display: block;
+        transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .navbar .close-menu .close-x span,
+    .animated-close .close-x span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.5rem;
+        height: 1.2px;
+        /* X più sottile */
+        background: #000;
+        border-radius: 0;
+        transition: all 0.2s ease;
+        transform-origin: center;
+        opacity: 1;
+    }
+
+    .navbar .close-menu .close-x span:first-child,
+    .animated-close .close-x span:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .navbar .close-menu .close-x span:last-child,
+    .animated-close .close-x span:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .navbar .close-menu.to-plus .close-x span:first-child,
+    .animated-close.to-plus .close-x span:first-child {
+        transform: translate(-50%, -50%) rotate(0deg);
+        background: #0078d4;
+    }
+
+    .navbar .close-menu.to-plus .close-x span:last-child,
+    .animated-close.to-plus .close-x span:last-child {
+        transform: translate(-50%, -50%) rotate(0deg);
+        background: #0078d4;
+    }
+
+    /* Stile hover della X */
+    .navbar .close-menu:hover .close-x span,
+    .animated-close:hover .close-x span {
+        background: #ff6b6b !important;
+        /* Rosso chiaro */
+        filter: blur(0.3px);
+    }
+
+    /* Rimuove tutti gli effetti al click */
+    .navbar .close-menu:active,
+    .animated-close:active {
+        transform: none !important;
+        background: none !important;
+    }
+
+    /* Rimuove l'effetto hover del contenitore della X */
+    .navbar .close-menu:hover,
+    .animated-close:hover {
+        background: none !important;
+        transform: none !important;
+    }
+
+    /* 
+  IMPORTANTE: 
+  Per evitare che la navbar fissa copra il contenuto,
+  aggiungi al contenuto principale (es: .main-content o .about-me) un padding-top di almeno 80px (o 60px se navbar-white).
+  Esempio:
+    .main-content {
+      padding-top: 80px;
+    }
+*/
+
+    /* Regola più specifica per forzare il colore nero sull'icona hamburger quando .icon-black è presente */
+    .navbar.navbar-white .hamburger .icon.icon-black,
+    .navbar.navbar-white .icon.icon-black {
+        color: #000 !important;
+    }
+
+    .icon-black {
+        color: #000 !important;
+    }
+
+    /* HIDE global navbar when the SmartLight page is active (set by index.jsx) */
+    body.on-smartlight .navbar {
+        display: none !important;
+    }
+
+    /* Blocca ogni cambiamento di stile quando il menu mobile è aperto */
+    .navbar .nav-menu.active,
+    .navbar .nav-menu.active li,
+    .navbar .nav-menu.active a,
+    .navbar .nav-menu.active .icon,
+    .navbar .nav-menu.active .close-menu,
+    .navbar .nav-menu.active .close-x span {
+        color: #222 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        transition: none !important;
+        filter: none !important;
+    }
+
+    /* Blocca la X: colore, spessore, dimensione */
+    .navbar .nav-menu.active .close-menu .close-x span,
+    .navbar .nav-menu.active .animated-close .close-x span {
+        background: #000 !important;
+        height: 1.2px !important;
+        width: 1.5rem !important;
+        border-radius: 0 !important;
+        transition: none !important;
+        filter: none !important;
+    }
+
+    /* Blocca la X anche su hover */
+    .navbar .nav-menu.active .close-menu:hover .close-x span,
+    .navbar .nav-menu.active .animated-close:hover .close-x span {
+        background: #000 !important;
+        filter: none !important;
+    }
+
+    /* Blocca la X anche su .to-plus */
+    .navbar .nav-menu.active .close-menu.to-plus .close-x span,
+    .navbar .nav-menu.active .animated-close.to-plus .close-x span {
+        background: #000 !important;
+        transform: none !important;
+    }
+
+    /* Blocca ogni effetto hover/active su tutti gli elementi del menu mobile */
+    .navbar .nav-menu.active li:hover,
+    .navbar .nav-menu.active a:hover,
+    .navbar .nav-menu.active .icon:hover,
+    .navbar .nav-menu.active .close-menu:hover {
+        color: #222 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        transition: none !important;
+        filter: none !important;
+    }
+
+    /* Blocca la linea sotto le voci di menu */
+    .navbar .nav-menu.active li::before,
+    .navbar .nav-menu.active li:hover::before {
+        display: none !important;
+        background: none !important;
     }
 }

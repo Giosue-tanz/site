@@ -3,13 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/site/', // Sostituisci con il nome del tuo repository
+  base: '/', // Dominio personalizzato: giosueaiello.com
   server: {
-    port: 3000,
-  },
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
+    open: true, // Apre automaticamente il browser
   },
 });

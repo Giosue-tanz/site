@@ -25,8 +25,8 @@ body, html {
 }
 
 .profile-image {
-  width: 300px;
-  height: 300px;
+  width: 380px;
+  height: 380px;
   border-radius: 1000px;
   object-fit: cover;
   margin-left: 20px;
@@ -37,7 +37,7 @@ body, html {
   font-size: 1.5em;
   margin-bottom: 0;
   color: #fafafa; /* Increased white intensity */
-  animation: fadeIn 1.5s ease-in-out forwards;
+  animation: fadeIn 1.2s ease-in-out forwards;
 }
 
 @font-face {
@@ -51,7 +51,7 @@ body, html {
   text-transform: uppercase;
   font-size: 4em;
   text-shadow: 2px 2px 4px #000;
-  animation: fadeIn 1.8s ease-in-out 0.3s forwards;
+  animation: fadeIn 1.5s ease-in-out 0.3s forwards;
 }
 
 /* BUTTON */
@@ -200,14 +200,15 @@ body, html {
     justify-content: space-between;
     height: 100vh;
     padding: 0px 0px 120px 0px;
+    transform: none; /* Rimuovi la traslazione verso l'alto */
   }
 
   .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 200px auto 0 auto;
+    margin: 180px auto 0 auto; /* Più spazio sopra e sotto l'immagine */
     display: block;
   }
 
@@ -218,6 +219,7 @@ body, html {
     width: 100%;
     padding-right: 20px; /* Add padding for right alignment */
     padding-left: 0; /* Remove left padding for consistency */
+    margin-top: 40px; /* Aumenta la distanza tra immagine e testo */
   }
 
   .intro {
@@ -240,8 +242,8 @@ body, html {
     justify-content: flex-end; /* Align buttons to the right */
     align-items: center;
     gap: 20px; /* Adjusted for mobile */
-    margin-top: 0px;
-    margin-bottom: 100px;
+    margin-top: 0px; /* Aumenta la distanza tra testo e bottoni */
+    margin-bottom: 200px;
     padding-right: 20px; /* Match text-container padding */
     padding-left: 0; /* Remove left padding */
   }
@@ -256,10 +258,10 @@ body, html {
   .button {
     font-size: 14px;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: transparent;
     color: black;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
   }

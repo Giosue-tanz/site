@@ -1,0 +1,82 @@
+.smartlight-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+}
+
+.smartlight-container h1 {
+  font-size: 2.2rem;
+  color: #1a5e9a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.smartlight-container h2 {
+  font-size: 1.3rem;
+  color: #2563eb;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  border-left: 4px solid #2563eb;
+  padding-left: 10px;
+}
+
+.smartlight-container h3 {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 24px;
+}
+
+.smartlight-container section {
+  margin-bottom: 18px;
+}
+
+.smartlight-container ul,
+.smartlight-container ol {
+  margin-left: 22px;
+  margin-bottom: 8px;
+}
+
+.smartlight-container ul ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.smartlight-container li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.smartlight-container p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.smartlight-notes {
+  background: #e8eef7;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 32px;
+  font-size: 0.97rem;
+  color: #2d3a4a;
+}
+
+.smartlight-notes ol {
+  margin-left: 18px;
+}
+
+@media (max-width: 600px) {
+  .smartlight-container {
+    padding: 12px 4px;
+  }
+  .smartlight-container h1 {
+    font-size: 1.3rem;
+  }
+  .smartlight-container h2 {
+    font-size: 1.05rem;
+  }
+}
