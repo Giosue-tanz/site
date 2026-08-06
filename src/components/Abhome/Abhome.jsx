@@ -4,13 +4,6 @@ import ProfileImage from '../../assets/aaa.png';
 import { Link } from 'react-router-dom';
 
 const Abhome = () => {
-  const handleLearnMoreClick = (e) => {
-    e.preventDefault();
-    const section = document.getElementById('learn-more-section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="about-me">

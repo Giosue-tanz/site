@@ -1,6 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import './Curriculum.css';
 import ProfilePic from '../../assets/a1.jpg';
 import BackgroundImg from '../../assets/cur2.png';

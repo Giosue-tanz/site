@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Works.css';
 import VideoClip from '../../assets/video1.mp4';
-import VideoPoster from '../../assets/cover1.jpg';
 import FutureWorks from '../FutureWorks/FutureWorks';
 
 const Works = () => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.play().catch(e => console.log("Video play error:", e));
+        }
+    }, []);
     return (
         <>
             <div className='works-section'>
-                <video src={VideoClip} autoPlay loop muted playsInline preload="auto" poster={VideoPoster}>
+                <video ref={videoRef} src={VideoClip} autoPlay loop muted playsInline preload="auto">
                     Your browser does not support the video tag.
                 </video>
                 <h1 className='title-work'>Works</h1>

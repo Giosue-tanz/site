@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Contact.css';
 import VideoClip from '../../assets/video.mp4';
-import img from '../../assets/a3.png';
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx0jAelJTMZb8h4jJMLWXSV9txwRw-Z2doP6uyJLbgtgpT3_BVK2ZcAhuOqmNjRvHfeHA/exec';
 
 const Contact = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.log("Video play error:", e));
+    }
+  }, []);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -49,13 +56,13 @@ const Contact = () => {
     <section id="contact">
       <div className="c-section">
         <video
+          ref={videoRef}
           src={VideoClip}
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          poster={img}
         />
         <h1 className="title-c">Contact</h1>
         <div className="title-line-c"></div>

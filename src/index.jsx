@@ -9,7 +9,7 @@ function updateBodyForSmartLight(hash) {
   try {
     const isSmart = typeof hash === 'string' && hash.indexOf('smart-light') !== -1;
     document.body.classList.toggle('on-smartlight', isSmart);
-  } catch (e) {
+  } catch {
     // ignore server-side or test environments
   }
 }

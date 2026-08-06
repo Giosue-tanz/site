@@ -1,36 +1,20 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import "./FutureWorks.css";
-import Img1 from '../../assets/topografia2.jpg';
 
 import VideoClip from '../../assets/VideoC5.mp4';
 
-// Animation Variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1], // Custom easeOut
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
 // Componente singolo FutureWorkItem
-const FutureWorkItem = ({ title, description, bg, video, children, className, id, onClick }) => (
-  <motion.div
+const FutureWorkItem = ({ title, description, bg, video, children, className, id, onClick }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.log("Video play error:", e));
+    }
+  }, [video]);
+
+  return (
+  <div
     className={`futurework-banner ${className || ''}`}
     id={id}
     style={{
@@ -38,31 +22,28 @@ const FutureWorkItem = ({ title, description, bg, video, children, className, id
       ...(onClick ? { cursor: 'pointer' } : {})
     }}
     onClick={onClick}
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-10%" }}
   >
     {video && (
-      <video className="futurework-video-bg" autoPlay loop muted playsInline preload="auto" poster={bg}>
+      <video ref={videoRef} className="futurework-video-bg" autoPlay loop muted playsInline preload="auto">
         <source src={video} type="video/mp4" />
       </video>
     )}
     <div className={`futurework-banner-overlay ${bg || video ? 'center-bg' : ''}`}>
-      <motion.h2 className={`futurework-title ${bg || video ? 'dark-title' : ''}`} variants={itemVariants}>
+      <h2 className={`futurework-title ${bg || video ? 'dark-title' : ''}`}>
         {title}
-      </motion.h2>
+      </h2>
       {description && (
-        <motion.p className="futurework-desc" variants={itemVariants}>
+        <p className="futurework-desc">
           {description}
-        </motion.p>
+        </p>
       )}
-      <motion.div variants={itemVariants} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {children}
-      </motion.div>
+      </div>
     </div>
-  </motion.div>
-);
+  </div>
+  );
+};
 
 // Esempio di utilizzo di FutureWorkItem
 const FutureWorks = () => (
@@ -70,7 +51,6 @@ const FutureWorks = () => (
     <FutureWorkItem
       title="Smart Light"
       video={VideoClip}
-      bg={Img1}
       id="smart-light-section"
       className="smart-light-section-new"
       onClick={() => {

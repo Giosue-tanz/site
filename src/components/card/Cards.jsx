@@ -6,9 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './Cards.css';
 
-import logo_tanz from '../../assets/logo_tanz.jpeg';
-import now from '../../assets/now.jpg';
-import image2 from '../../assets/image2.jpg';
 import smartlight_logo2 from '../../assets/smartlight-logo2.jpg';
 
 const cardsData = [

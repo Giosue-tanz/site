@@ -5,11 +5,6 @@ import ProfileImage from '../../assets/a1.jpg';
 
 const AboutMe = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // Navigate back to the homepage or trigger CV download
-  const handleHomeClick = () => {
-    window.location.href = '/'; // Adjust to your homepage URL or update for CV download
-  };
-
   // Scroll lento ma non troppo (900ms)
   const handleMoreClick = () => {
     const isMobile = window.innerWidth <= 940;

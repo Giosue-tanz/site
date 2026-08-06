@@ -8,7 +8,7 @@ const Notes = lazy(() => import('./routes/Notes.jsx'));
 const Curriculum = lazy(() => import('./components/Curriculum/Curriculum.jsx'));
 const WiCPage = lazy(() => import('./routes/WiC.jsx'));
 const FullStackPage = lazy(() => import('./routes/FullStackPage.jsx'));
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar.jsx';
 import Abhome from './components/Abhome/Abhome.jsx';
 import Cards from './components/card/Cards.jsx';
@@ -43,8 +43,6 @@ const ShopShoes = () => <div>Shop Shoes Page</div>;
 const ShopTshirts = () => <div>Shop T-shirts Page</div>;
 
 function App() {
-  const location = useLocation();
-
   return (
     <div className="app">
       {/* render global Navbar except on smart-light route (SmartLight page has its own navbar/footer) */}

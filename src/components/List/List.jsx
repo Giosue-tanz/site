@@ -8,9 +8,6 @@ import './List.css';
 import sl from '../../assets/note_smart_light.jpg';
 import logo_tanz from '../../assets/logo_tanz.jpeg';
 import sml2 from '../../assets/sml2.jpeg';
-import now from '../../assets/now.jpg';
-import image1 from '../../assets/image1.jpg';
-import image2 from '../../assets/image2.jpg';
 
 const notesData = [
   { title: 'Update from Smart Light', description: 'Latest innovations in optimizing intelligent traffic lights.', date: '16/03/2026', image: sml2, route: '/note-smartlight2' },
