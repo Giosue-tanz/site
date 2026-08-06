@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./FutureWorks.css";
 
-import VideoClip from '../../assets/VideoC5.mp4';
+const VideoClip = '/video/VideoC5.mp4';
 
 // Componente singolo FutureWorkItem
 const FutureWorkItem = ({ title, description, bg, video, children, className, id, onClick }) => {

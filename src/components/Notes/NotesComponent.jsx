@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Notes.css';
-import VideoClip from '../../assets/carlos.mp4';
+const VideoClip = '/video/carlos.mp4';
 import NotesList from '../Noteslist/NotesList';
 
 const NotesComponent = () => {

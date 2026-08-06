@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Contact.css';
-import VideoClip from '../../assets/video.mp4';
+const VideoClip = '/video/video.mp4';
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx0jAelJTMZb8h4jJMLWXSV9txwRw-Z2doP6uyJLbgtgpT3_BVK2ZcAhuOqmNjRvHfeHA/exec';
 

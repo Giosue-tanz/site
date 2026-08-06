@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Works.css';
-import VideoClip from '../../assets/video1.mp4';
+const VideoClip = '/video/video1.mp4';
 import FutureWorks from '../FutureWorks/FutureWorks';
 
 const Works = () => {
