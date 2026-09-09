@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 // code-splitting: lazy-load heavier route components to improve initial bundle
 const NoteSmartLight1 = lazy(() => import('./components/Noteslist/NoteSmartLight1.jsx'));
 const NoteSmartLight2 = lazy(() => import('./components/Noteslist/NoteSmartLight2.jsx'));
+const NoteSmartLight3 = lazy(() => import('./components/Noteslist/NoteSmartLight3.jsx'));
 const NoteTanz = lazy(() => import('./components/Noteslist/NoteTanz.jsx'));
 const Works = lazy(() => import('./routes/Works.jsx'));
 const Notes = lazy(() => import('./routes/Notes.jsx'));
@@ -70,6 +71,7 @@ function App() {
 
           <Route path="/note-smartlight1" element={<NoteSmartLight1 />} />
           <Route path="/note-smartlight2" element={<NoteSmartLight2 />} />
+          <Route path="/note-smartlight3" element={<NoteSmartLight3 />} />
           <Route path="/note-tanz" element={<NoteTanz />} />
           <Route path="/full-stack" element={<FullStackPage />} />
         </Routes>

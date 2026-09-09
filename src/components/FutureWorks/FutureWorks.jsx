@@ -54,7 +54,7 @@ const FutureWorks = () => (
       id="smart-light-section"
       className="smart-light-section-new"
       onClick={() => {
-        window.open('https://www.smart-light.it/', '_blank');
+        window.open('https://giosue-tanz.github.io/smart-light.it/', '_blank');
       }}
     >
       <div className="sl-premium-content">
@@ -67,7 +67,7 @@ const FutureWorks = () => (
         <button
           className="sl-business-btn"
           onClick={() => {
-            window.open('https://www.smart-light.it/', '_blank');
+            window.open('https://giosue-tanz.github.io/smart-light.it/', '_blank');
           }}
         >
           <span>EXPLORE</span>

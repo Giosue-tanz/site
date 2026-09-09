@@ -87,7 +87,7 @@ const Curriculum = () => {
 
                             <div className="experience-item">
                                 <div className="item-header">
-                                    <h3><span className="role-title">CEO & CTO</span> – <a href="https://www.smart-light.it/" className="link-blue"><em>SmartLight</em></a></h3>
+                                    <h3><span className="role-title">CEO & CTO</span> – <a href="https://giosue-tanz.github.io/smart-light.it/" className="link-blue"><em>SmartLight</em></a></h3>
                                     <span className="dates">2025–Present</span>
                                 </div>
                                 <div className="item-content">

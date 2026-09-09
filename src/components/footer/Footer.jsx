@@ -33,7 +33,7 @@ const Footer = () => {
             <h4>Research</h4>
             <ul>
               <li>
-                <a href="https://www.smart-light.it/" className="footer-link" role="button" target="_blank" rel="noopener noreferrer">
+                <a href="https://giosue-tanz.github.io/smart-light.it/" className="footer-link" role="button" target="_blank" rel="noopener noreferrer">
                   Smart Light
                 </a>
               </li>

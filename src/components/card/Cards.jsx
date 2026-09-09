@@ -10,7 +10,7 @@ import smartlight_logo2 from '../../assets/smartlight-logo2.jpg';
 
 const cardsData = [
   // { src: ..., label: '7wic', route: '/wic' }, // add other cards here
-  { src: smartlight_logo2, label: 'Smart Light', externalLink: 'https://www.smart-light.it' },
+  { src: smartlight_logo2, label: 'Smart Light', route: '/note-smartlight3' },
 ];
 
 function Cards() {

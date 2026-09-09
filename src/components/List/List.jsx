@@ -8,8 +8,10 @@ import './List.css';
 import sl from '../../assets/note_smart_light.jpg';
 import logo_tanz from '../../assets/logo_tanz.jpeg';
 import sml2 from '../../assets/sml2.jpeg';
+import smartlightLogo2 from '../../assets/smartlight-logo2.jpg';
 
 const notesData = [
+  { title: 'Smart Light — A Chapter Closes', description: 'A fundamental milestone. The team pauses. The work stays open for whoever wants to carry it forward.', date: '09/09/2026', image: smartlightLogo2, route: '/note-smartlight3', darkBg: true },
   { title: 'Update from Smart Light', description: 'Latest innovations in optimizing intelligent traffic lights.', date: '16/03/2026', image: sml2, route: '/note-smartlight2' },
   { title: 'SmartLight Victory', description: 'Sustainable mobility contest and acknowledgments.', date: '09/09/2025', image: sl, route: '/note-smartlight1' },
   { title: 'Why Tanz?', description: "Tanz, a reflection on the ethical implications of its model.", date: '28/02/2024', image: logo_tanz, route: '/note-tanz' },
@@ -90,6 +92,7 @@ const List = () => {
                     src={note.image}
                     loading="lazy"
                     decoding="async"
+                    style={note.darkBg ? { backgroundColor: '#000', objectFit: 'contain', padding: '30px', boxSizing: 'border-box' } : {}}
                   />
                   <div className="card-overlay">
                     <h1 className="card-title">{note.title}</h1>

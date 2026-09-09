@@ -3,6 +3,7 @@ import './NotesList.css';
 import topografia1 from '../../assets/note_smart_light.jpg';
 import Img1 from '../../assets/logo tanz.jpeg';
 import sml2Img from '../../assets/sml2.jpeg';
+import smartlightLogo2 from '../../assets/smartlight-logo2.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const articlesData = [
@@ -23,6 +24,12 @@ const articlesData = [
         title: 'Update from Smart Light',
         desc: 'Update on the Smart Light project with the latest innovations in optimizing intelligent traffic lights and urban sustainable mobility.',
         date: '16/03/2026'
+    },
+    {
+        img: smartlightLogo2,
+        title: 'Smart Light — A Chapter Closes',
+        desc: 'Smart Light was a fundamental milestone. Today, the team has decided to pause the project and move toward new challenges. The work is preserved — open to anyone who wants to carry it forward.',
+        date: '09/09/2026'
     }
 ];
 
@@ -52,6 +59,8 @@ const NotesList = () => {
                             navigate('/note-tanz');
                         } else if (article.title === 'Update from Smart Light') {
                             navigate('/note-smartlight2');
+                        } else if (article.title === 'Smart Light — A Chapter Closes') {
+                            navigate('/note-smartlight3');
                         } else {
                             navigate('/wic');
                         }
@@ -63,6 +72,7 @@ const NotesList = () => {
                         className="notes-article-img"
                         loading="lazy"
                         decoding="async"
+                        style={article.title === 'Smart Light \u2014 A Chapter Closes' ? { backgroundColor: '#000', objectFit: 'contain', padding: '24px', boxSizing: 'border-box' } : {}}
                     />
                     <div className="notes-article-content">
                         <span className="notes-article-date">{article.date}</span>
