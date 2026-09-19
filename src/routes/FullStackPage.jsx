@@ -41,7 +41,7 @@ const FullStackPage = () => {
         const subjectLine = `New Project Inquiry: ${service}`;
         const bodyContent = `Name: ${name}\nEmail: ${email}\nService Interested: ${service}\n\nMessage:\n${message}`;
 
-        window.location.href = `mailto:giosue.tanz@gmail.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyContent)}`;
+        window.location.href = `mailto:osnem5tkj@mozmail.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(bodyContent)}`;
     };
 
     return (

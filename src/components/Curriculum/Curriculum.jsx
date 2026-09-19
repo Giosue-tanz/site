@@ -62,7 +62,7 @@ const Curriculum = () => {
                                 <h3 className="sidebar-heading">Contact</h3>
                                 <div className="heading-line"></div>
                             </div>
-                            <p className="contact-line">✉️ <a href="mailto:giosue.tanz@gmail.com">giosue.tanz@gmail.com</a></p>
+                            <p className="contact-line">✉️ <a href="mailto:osnem5tkj@mozmail.com">osnem5tkj@mozmail.com</a></p>
                             <p className="contact-line">🌐 <a href="https://giosueaiello.com">giosueaiello.com</a></p>
                             <p className="contact-line">🔗 <a href="https://github.com/Giosue-tanz">github.com/Giosue-tanz</a></p>
                         </div>
