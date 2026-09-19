@@ -29,7 +29,7 @@ const Abhome = () => {
             </div>
             <div className="column">
               <p><strong>University:</strong> University of Pisa</p>
-              <p><strong>Email:</strong> giosue.tanz@gmail.com</p>
+              <p><strong>Email:</strong> osnem5tkj@mozmail.com</p>
             </div>
           </div>
           <div className="button-container">
