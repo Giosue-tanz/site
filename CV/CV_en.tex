@@ -1,0 +1,92 @@
+%% Curriculum Vitae -- Giosù Aiello -- English version
+%% Compile with pdfLaTeX (style in cvstyle.sty, photo in photo.jpg)
+\documentclass[11pt,a4paper]{article}
+\usepackage[english]{babel}
+\usepackage{cvstyle}
+
+\hypersetup{pdftitle={Curriculum Vitae - Giosu Aiello},
+            pdfauthor={Giosu Aiello}}
+
+\begin{document}
+\begin{cvlayout}
+
+%% ====================== LEFT COLUMN (sidebar) ==============================
+\cvname{Gios\`u Aiello}
+\cvphoto{photo.jpg}
+
+\sidebarsection{Professional Skills}
+\begin{cvskills}
+  \item Teamwork
+  \item Effective Communication
+  \item Project Design and Presentation
+  \item Scientific and Technical Writing
+  \item Data Analysis with Python and MATLAB
+  \item Commitment to Stakeholder Satisfaction
+  \item Programming: Python, JavaScript, C++, \LaTeX
+  \item And more\dots
+\end{cvskills}
+
+\sidebarsection{Languages}
+\textbf{Italian} (Native)\\
+\textbf{English} (B2)
+
+\sidebarsection{Personal Details}
+Citizenship: \textbf{Italian}\\[2.9bp]
+Residence: \textbf{Pisa, Italy}
+
+\sidebarsection{Contact}
+{\small
+\MVAt{} \href{mailto:giosue.tanz@gmail.com}{giosue.tanz@gmail.com}\\[6.3bp]
+\textbf{Website:}\\
+\href{https://giosueaiello.com}{giosueaiello.com}\\[6.3bp]
+\textbf{GitHub:}\\
+\href{https://github.com/Giosue-tanz}{github.com/Giosue-tanz}
+}
+
+%% ======================= RIGHT COLUMN (content) =============================
+\cvmaincolumn
+
+\cvsection{Profile}
+\begin{cvprose}
+Physics undergraduate student at the University of Pisa with a rigorous
+academic foundation and a steadfast commitment to analytical excellence. My
+academic journey is driven by a profound interest in understanding the
+fundamental laws of nature and their subsequent application in cutting-edge
+technologies.
+
+I have developed a solid background in both theoretical and experimental
+physics, with a specific focus on quantum systems and computational
+modeling. My approach integrates mathematical rigor with proactive
+problem-solving, aimed at contributing to innovative research.
+
+Beyond the core curriculum, I am actively engaged in research projects
+involving deep neural networks.
+\end{cvprose}
+
+\cvsection{Experience}
+
+\cvevent[\cvurl{https://giosue-tanz.github.io/smart-light.it/}{SmartLight}]%
+        {CEO \& CTO}{2025--September 2026}
+\cvitem{Leading the SmartLight initiative, an AI-driven project focused on
+optimising urban traffic flow in Pisa. The adaptive management system
+leverages Reinforcement Learning and computer vision to control traffic
+signals in real-time, reducing congestion and energy consumption. Project
+\textbf{winner of the sustainable mobility idea contest} promoted by the
+\cvurl{https://www.unipi.it/news/due-idee-per-una-mobilita-sostenibile-e-inclusiva-premiati-i-vincitori-del-contest-promosso-dal-contamination-lab/}{University
+of Pisa's Contamination Lab}.}
+
+\cvevent{Author of University Study Notes}{2024--Present}
+\cvitem{Author and editor of comprehensive university study notes and
+academic resources for core Physics and Mathematics courses, typeset in
+LaTeX to facilitate conceptual mastery.}
+
+\cvsection{Education}
+
+\cvdegree{Undergraduate Student in Physics}%
+         {University of Pisa}{2023--Present}
+
+\cvdegree{Scientific High School Diploma (Applied Sciences Option)}%
+         {Liceo Scientifico Enrico Boggio Lera, Catania}{2017--2022}
+
+\end{cvlayout}
+\end{document}

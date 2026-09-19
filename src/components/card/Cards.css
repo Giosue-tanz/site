@@ -64,8 +64,8 @@ body {
   /* Imposta la dimensione del font a 50px */
   color: #000;
   /* Imposta il colore del testo a nero */
-  padding-top: 1%;
-  /* Aggiunge 1% di padding in cima */
+  margin: 0;
+  padding: 0;
 }
 
 .cards__container {
@@ -234,9 +234,9 @@ body {
 
   .cards .foreground-title {
     font-size: 30px;
-    margin-bottom: 10px;
     color: #000;
-    padding-top: 12px;
+    margin: 0;
+    padding: 0;
   }
 
   .cards {
@@ -255,7 +255,8 @@ body {
   .foreground-title {
     font-size: 36px;
     color: #000;
-    padding-top: 10px;
+    margin: 0;
+    padding: 0;
   }
 
   .cards__container {

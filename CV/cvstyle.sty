@@ -1,0 +1,132 @@
+%% cvstyle.sty -- stile del curriculum di Giosù Aiello
+%% Ricostruzione LaTeX dell'impaginazione dei file CV_it.pdf / CV_en.pdf
+%% Compilare con pdfLaTeX.  Richiede: FiraSans, marvosym, eso-pic, enumitem.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cvstyle}[2026/09/19 CV a due colonne con barra laterale]
+
+% ---------------------------------------------------------------- pacchetti --
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[lf,sfdefault]{FiraSans}
+\RequirePackage{marvosym}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{enumitem}
+\RequirePackage{eso-pic}
+\RequirePackage{etoolbox}
+\RequirePackage[stretch=25,shrink=25]{microtype}
+
+% ------------------------------------------------------------------- colori --
+\definecolor{cvblue}{HTML}{304263}    % titoli, link, banda superiore
+\colorlet{sidebarbg}{cvblue!95!white} % fondo della barra laterale
+
+% --------------------------------------------------------------- dimensioni --
+\newlength{\sidebarwidth}      \setlength{\sidebarwidth}{196.442bp}
+\newlength{\sidebarmargin}     \setlength{\sidebarmargin}{17.679bp}
+\newlength{\sidebartextwidth}  \setlength{\sidebartextwidth}{161.084bp}
+\newlength{\columngap}         \setlength{\columngap}{44.952bp}
+\newlength{\maintextwidth}     \setlength{\maintextwidth}{333.353bp}
+\newlength{\topbandheight}     \setlength{\topbandheight}{5mm}
+\newlength{\cvrulewidth}       \setlength{\cvrulewidth}{0.4bp}
+\newlength{\photowidth}        \setlength{\photowidth}{104.70bp}
+
+% spaziature verticali
+\newlength{\sectionskip}    \setlength{\sectionskip}{19.6bp} % prima di un titolo
+\newlength{\headingrulesep} \setlength{\headingrulesep}{2.3bp} % titolo -> filetto
+\newlength{\afterrulesep}   \setlength{\afterrulesep}{8.75bp} % filetto -> testo
+\newlength{\entryskip}      \setlength{\entryskip}{7.5bp}    % tra due voci
+\newlength{\cvparskip}      \setlength{\cvparskip}{4.6bp}    % tra due capoversi
+
+\RequirePackage[a4paper,top=14.91bp,bottom=28bp,
+                left=\sidebarmargin,right=38.208bp]{geometry}
+\RequirePackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ------------------------------------------------ fondo della barra laterale --
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{\textcolor{sidebarbg}{\rule{\sidebarwidth}{\paperheight}}}%
+  \AtPageUpperLeft{\raisebox{-\topbandheight}{%
+      \textcolor{cvblue}{\rule{\sidebarwidth}{\topbandheight}}}}%
+}
+
+% ------------------------------------------------------------- impaginato ----
+% \begin{cvlayout} <barra laterale> \cvmaincolumn <colonna principale> \end{cvlayout}
+\newenvironment{cvlayout}{%
+  \noindent
+  \begin{minipage}[t]{\sidebartextwidth}%
+    \color{white}%
+    \vspace*{2.52bp}%
+}{%
+  \end{minipage}%
+}
+\newcommand{\cvmaincolumn}{%
+  \end{minipage}\hspace{\columngap}\begin{minipage}[t]{\maintextwidth}%
+  \color{black}%
+}
+
+% ------------------------------------------------------- barra laterale ------
+\newcommand{\cvname}[1]{{\Large\bfseries\scshape #1\par}}
+
+\newcommand{\cvphoto}[1]{%
+  \par\vspace{12.8bp}%
+  \centerline{\includegraphics[width=\photowidth]{#1}}%
+}
+
+\newcommand{\sidebarsection}[1]{%
+  \par\addvspace{\sectionskip}%
+  {\normalsize\bfseries\scshape #1\par}%
+  \vspace{\headingrulesep}%
+  {\color{white}\hrule height \cvrulewidth}%
+  \vspace{\afterrulesep}%
+  \par\noindent\ignorespaces
+}
+
+% elenco puntato della barra laterale
+\newlist{cvskills}{itemize}{1}
+\setlist[cvskills]{label=\textbullet,
+  leftmargin=17.008bp, labelindent=8.019bp, labelwidth=8.989bp, labelsep=0bp,
+  align=left, topsep=1bp, partopsep=0bp, parsep=0bp, itemsep=2bp,
+  before=\raggedright}
+
+% --------------------------------------------------- colonna principale ------
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{\sectionskip}%
+  {\color{cvblue}\Large\scshape #1\par}%
+  \vspace{\headingrulesep}%
+  {\color{cvblue}\hrule height \cvrulewidth}%
+  \vspace{\afterrulesep}%
+  \par\noindent\ignorespaces
+}
+
+% prosa su più capoversi (sezione "Profilo")
+\newenvironment{cvprose}{\par\setlength{\parskip}{\cvparskip}}{\par}
+
+% \cvevent[ente]{ruolo}{date}
+\newcommand{\cvevent}[3][]{%
+  \par\addvspace{\entryskip}%
+  {\normalsize\textsc{#2}%
+   \ifblank{#1}{}{\ \textendash\ \textit{#1}}%
+   \hfill\textbf{#3}\par}%
+  \nobreak
+}
+
+% \cvitem{descrizione} -- capoverso introdotto dal rombo
+\newcommand{\cvitem}[1]{%
+  \par{\fontsize{10pt}{13.6pt}\selectfont{$\diamond$} #1\par}%
+}
+
+% \cvdegree{titolo}{istituto}{date}
+\newcommand{\cvdegree}[3]{%
+  \par\addvspace{\entryskip}%
+  {\normalsize\textsc{#1}\par
+   \textit{#2}\hfill\textbf{#3}\par}%
+  \nobreak
+}
+
+% collegamento nella colonna principale
+\newcommand{\cvurl}[2]{\href{#1}{\textcolor{cvblue}{#2}}}
+
+\endinput

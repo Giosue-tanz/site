@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import CVLanguageModal from '../CVLanguageModal/CVLanguageModal';
 import './FooterStyles.css';
 
 const Footer = () => {
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   return (
     <footer className="footer">
       <div className="container">
@@ -16,16 +18,22 @@ const Footer = () => {
               <li><Link to="/works" className="footer-link" role="button">Works</Link></li>
               <li><Link to="/curriculum" className="footer-link" role="button">About Me</Link></li>
               <li>
-                <a
-                  href="/main.pdf"
+                <button
+                  type="button"
                   className="footer-link"
-                  role="button"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => setIsCvModalOpen(true)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    font: 'inherit',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    width: '100%',
+                  }}
                 >
                   Download CV
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -61,6 +69,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <CVLanguageModal isOpen={isCvModalOpen} onClose={() => setIsCvModalOpen(false)} />
     </footer>
   );
 };

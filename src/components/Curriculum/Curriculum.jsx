@@ -88,7 +88,7 @@ const Curriculum = () => {
                             <div className="experience-item">
                                 <div className="item-header">
                                     <h3><span className="role-title">CEO & CTO</span> – <a href="https://giosue-tanz.github.io/smart-light.it/" className="link-blue"><em>SmartLight</em></a></h3>
-                                    <span className="dates">2025–Present</span>
+                                    <span className="dates">2025–September 2026</span>
                                 </div>
                                 <div className="item-content">
                                     <p className="small-desc">Leading the SmartLight initiative, an AI-driven project focused on optimising urban traffic flow in Pisa. The adaptive management system leverages Reinforcement Learning and computer vision to control traffic signals in real-time, reducing congestion and energy consumption. Project <strong>winner of the sustainable mobility idea contest</strong> promoted by the <a href="https://www.unipi.it/news/due-idee-per-una-mobilita-sostenibile-e-inclusiva-premiati-i-vincitori-del-contest-promosso-dal-contamination-lab/" className="link-blue">University of Pisa's Contamination Lab</a>.</p>
