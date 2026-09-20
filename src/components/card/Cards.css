@@ -107,6 +107,9 @@ body {
   /* Nasconde l'overflow */
   border-radius: 15px;
   /* Arrotonda i bordi di 20px */
+  border: 1px solid #000;
+  /* Cornice sottile e nera */
+  box-sizing: border-box;
 }
 
 .cards__item__pic-wrap::after {
