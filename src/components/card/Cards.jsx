@@ -7,10 +7,12 @@ import 'swiper/css/navigation';
 import './Cards.css';
 
 import smartlight_logo2 from '../../assets/smartlight-logo2.jpg';
+import fisica1_cover from '../../assets/fisica1-cover.jpg';
 
 const cardsData = [
   // { src: ..., label: '7wic', route: '/wic' }, // add other cards here
   { src: smartlight_logo2, label: 'Smart Light', externalLink: 'https://giosue-tanz.github.io/smart-light.website/' },
+  { src: fisica1_cover, label: 'Fisica 1', externalLink: 'https://github.com/Giosue-tanz/Fisica_1' },
 ];
 
 function Cards() {
